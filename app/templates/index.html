@@ -1,0 +1,43 @@
+{# This simple template derives from ``base.html``. See ``base.html`` for
+   more information about template inheritance. #}
+{%- extends "base.html" %}
+
+{# Loads some of the macros included with Flask-Bootstrap. We are using the
+   utils module here to automatically render Flask's flashed messages in a
+   bootstrap friendly manner #}
+{% import "bootstrap/utils.html" as utils %}
+
+
+{# Inside the ``content`` is where you should place most of your own stuff.
+   This will keep scripts at the page end and a navbar you add on later
+   intact. #}
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>FMC API Lab</h1>
+            <p>Let's get started</p>
+            <p>
+                <a class="btn btn-lg btn-default" role="button" href="{{ url_for('frontend.pinhole') }}" >Create a Pinhole</a>
+            </p>
+        </div>
+        <div class="body-content">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2> Cisco</h2>
+                    <p>Cisco is the worldwide leader in IT and networking.  We help companies of all sizes transform how people connect, communicate, and collaborate.</p>
+                    <p><a class="btn btn-default" href="http://cisco.com/">Official website &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <h2> Firepower Management Center</h2>
+                    <p>Complete and unified management over firewalls, application control, intrusion prevention, URL filtering, and advanced malware protection.</p>
+                    <p><a href="http://www.cisco.com/c/en/us/products/security/firesight-management-center/index.html" class="btn btn-default">Official website &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <h2> Next-Generation Firewall (NGFW)</h2>
+                    <p>Intrusion prevention, advanced malware protection, correlate threat events and integrates with a number of Cisco® network security products.</p>
+                    <p><a href="http://www.cisco.com/go/ngfw" class="btn btn-default">Official website &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{%- endblock %}

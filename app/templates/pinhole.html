@@ -1,0 +1,23 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{%- extends "base.html" %}
+
+{% import "bootstrap/utils.html" as utils %}
+
+{% block content %}
+   <div class="container">
+      <div class="jumbotron">
+        <h1>Request Pinhole</h1>
+        <p>Entries are automatically removed every 24 hours</p>
+      </div>
+   <div class="col-md-12">
+       <form class="form form-horizontal" method="post" role="form">
+         {{ form.hidden_tag() }}
+         {{ wtf.form_errors(form, hiddens="only") }}
+         {{ wtf.form_field(form.ip) }}
+         {{ wtf.form_field(form.port) }}
+         <button type ="submit" class="btn btn-primary">Send Message</button>
+       </form>
+   </div>
+{%- endblock %}
